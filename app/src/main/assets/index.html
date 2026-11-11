@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Nova Island TV</title><style>
+*{box-sizing:border-box;-webkit-font-smoothing:antialiased} html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#020617;color:#fff;font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+.bg{position:fixed;inset:0;background:radial-gradient(1200px 600px at 50% -10%,#1e3a8a 0%,transparent 60%),linear-gradient(180deg,#050a1a 0%,#0a1428 45%,#01030a 100%)}
+.top{display:flex;justify-content:space-between;align-items:flex-start;padding:36px 48px 0;position:relative;z-index:2}
+.clock{text-align:center;min-width:280px} .clock .time{font-size:110px;font-weight:200;letter-spacing:8px;line-height:1;text-shadow:0 4px 30px rgba(0,0,0,.6)} .clock .date{font-size:28px;color:#e2e8f0;font-weight:300;margin-top:10px} .clock .loc{font-size:18px;color:#94a3b8;margin-top:4px}
+.gold{margin-top:48px;font-size:28px;font-weight:600;letter-spacing:.5px;text-shadow:0 2px 20px rgba(0,0,0,.7)} .gold i{color:#f87171;font-style:normal}
+.quran{background:linear-gradient(180deg,#f3d67a,#e8c268);color:#1a1200;padding:20px 56px;border-radius:999px;font-weight:900;font-size:28px;min-width:620px;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+.weather{display:flex;gap:16px;align-items:center;font-size:26px;font-weight:600;text-shadow:0 2px 20px rgba(0,0,0,.7)} .ramadan{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);padding:10px 18px;border-radius:999px;font-size:18px;font-weight:700}
+.center{margin:44px auto;text-align:center;position:relative;z-index:2} .center h2{font-weight:300;font-size:28px;color:#e2e8f0;margin:0}
+.pray{display:flex;gap:18px;justify-content:center;margin-top:22px} .pray div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(12px);padding:22px 26px;border-radius:22px;min-width:160px} .pray b{display:block;font-size:34px;margin-top:6px} .pray small{color:#cbd5e1;font-size:20px}
+.apps{display:flex;gap:22px;justify-content:center;margin-top:36px} .app{width:118px;height:118px;border-radius:28px;display:flex;align-items:center;justify-content:center;font-size:52px;box-shadow:0 0 0 3px rgba(255,255,255,.22),0 0 36px rgba(255,255,255,.18);font-weight:800}
+.btns{display:flex;gap:14px;justify-content:center;margin-top:22px} button{background:#1e293b;color:#fff;border:1px solid rgba(255,255,255,.28);padding:14px 26px;border-radius:999px;font-size:19px;font-weight:700;cursor:pointer}
+.ticker{position:fixed;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);padding:18px 0;overflow:hidden;white-space:nowrap;z-index:5} .ticker span{display:inline-block;animation:scroll 45s linear infinite;font-size:26px;font-weight:600;padding-left:80px} @keyframes scroll{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+#panel{display:none;position:fixed;inset:70px 110px;background:#0f172a;border-radius:28px;padding:36px;overflow:auto;z-index:20;box-shadow:0 30px 80px rgba(0,0,0,.7)} #panel h2{font-size:32px} #panel p{font-size:24px;line-height:2}
+</style></head><body><div class="bg"></div>
+<div class="top">
+<div class="clock"><div class="time" id="t">00:16</div><div class="date">الأربعاء، 11 نوفمبر</div><div class="loc">حولي، الكويت</div></div>
+<div class="gold">21K - 35.30 د.ك <i>▼</i></div>
+<div class="quran">﴿ القرآن الكريم ﴾</div>
+<div class="weather"><span>⛅ 21° حولي</span><span class="ramadan">🌙 باقي على رمضان 91 يوماً</span></div>
+</div>
+<div class="center"><h2>مواقيت الصلاة - حولي، الكويت</h2>
+<div class="pray"><div><small>الفجر</small><b>04:58 ص</b></div><div><small>الظهر</small><b>11:32 ص</b></div><div><small>العصر</small><b>02:38 م</b></div><div><small>المغرب</small><b>04:04 م</b></div><div><small>العشاء</small><b>05:54 م</b></div></div>
+<div class="apps"><div class="app" style="background:#e11d48">▶</div><div class="app" style="background:#0ea5e9">N</div><div class="app" style="background:#f59e0b">▶</div><div class="app" style="background:#22c55e">◉</div><div class="app" style="background:#8b5cf6">✦</div></div>
+<div class="btns"><button onclick="openPanel('adhkar')">اضغط لفتح الأذكار</button><button onclick="openPanel('khatm')">دعاء ختم القرآن</button></div>
+</div>
+<div id="panel"><button onclick="document.getElementById('panel').style.display='none'" style="float:left">إغلاق ✕</button><div id="panelContent"></div></div>
+<div class="ticker"><span>سبحان الله وبحمده ١٠٠ مرة &nbsp;•&nbsp; آية الكرسي &nbsp;•&nbsp; لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير &nbsp;•&nbsp; أصبحنا وأصبح الملك لله والحمد لله &nbsp;•&nbsp; أستغفر الله العظيم وأتوب إليه</span></div>
+<script>
+function upd(){let d=new Date();let h=d.getHours(),m=String(d.getMinutes()).padStart(2,'0');let h12=h%12||12;document.getElementById('t').textContent=String(h12).padStart(2,'0')+':'+m;} setInterval(upd,1000);upd();
+function openPanel(t){let p=document.getElementById('panel');p.style.display='block';document.getElementById('panelContent').innerHTML=t==='adhkar'?'<h2>الأذكار</h2><p>• آية الكرسي - مرة واحدة<br>• الإخلاص والفلق والناس - 3 مرات<br>• أصبحنا وأصبح الملك لله والحمد لله<br>• سبحان الله وبحمده - 100 مرة<br>• لا إله إلا الله وحده لا شريك له - 100 مرة</p>':'<h2>دعاء ختم القرآن</h2><p>اللهم ارحمني بالقرآن واجعله لي إماماً ونوراً وهدى ورحمة، اللهم ذكرني منه ما نسيت وعلمني منه ما جهلت وارزقني تلاوته آناء الليل وأطراف النهار واجعله لي حجة يا رب العالمين.</p>';}
+</script></body></html>
